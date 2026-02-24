@@ -11,3 +11,4 @@
 [styles.css](https://github.com/user-attachments/files/25511068/styles.css)
 [login.html](https://github.com/user-attachments/files/25511067/login.html)
 [index.html](https://github.com/user-attachments/files/25511066/index.html)
+[register.html](https://github.com/user-attachments/files/25528765/register.html)
