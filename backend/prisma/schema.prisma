@@ -1,0 +1,117 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// =====================
+// GENERATOR + DATASOURCE
+// =====================
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// =====================
+// ENUMS
+// =====================
+enum UserRole {
+  staff
+  admin
+}
+
+enum CourseStatus {
+  pending
+  approved
+  rejected
+}
+
+// =====================
+// MODELS
+// =====================
+
+// USERS
+model User {
+  id               String     @id @default(uuid())
+  email            String     @unique
+  name             String
+  role             UserRole   @default(staff)
+  bio              String?
+  profile_image_url String?
+  isActive         Boolean    @default(true)
+  department_id    String?
+  department       Department? @relation(fields: [department_id], references: [id])
+  submittedCourses Course[]   @relation("SubmittedCourses")
+  reviewedCourses  Course[]   @relation("ReviewedCourses")
+  downloads        Download[]
+
+  created_at       DateTime   @default(now())
+  updated_at       DateTime   @updatedAt
+}
+
+// DEPARTMENTS
+model Department {
+  id     String   @id @default(uuid())
+  name   String   @unique
+  users  User[]
+}
+
+// CATEGORIES
+model Category {
+  id      String    @id @default(uuid())
+  name    String
+  courses Course[]
+}
+
+// COURSES
+model Course {
+  id              String        @id @default(uuid())
+  title           String
+  description     String
+  status          CourseStatus  @default(pending)
+
+  category_id     String
+  category        Category      @relation(fields: [category_id], references: [id])
+
+  submitted_by    String
+  submitter       User          @relation("SubmittedCourses", fields: [submitted_by], references: [id])
+
+  reviewed_by     String?
+  reviewer        User?         @relation("ReviewedCourses", fields: [reviewed_by], references: [id])
+
+  rejectionReason String?
+  submitted_at    DateTime      @default(now())
+  reviewed_at     DateTime?
+
+  files           CourseFile[]
+  downloads       Download[]
+}
+
+// COURSE FILES
+model CourseFile {
+  id         String   @id @default(uuid())
+  course_id  String
+  course     Course   @relation(fields: [course_id], references: [id])
+
+  file_name  String
+  file_type  String
+  file_url   String
+  file_size  Int
+
+  created_at DateTime @default(now())
+}
+
+// DOWNLOADS
+model Download {
+  id          String   @id @default(uuid())
+  course_id   String
+  course      Course   @relation(fields: [course_id], references: [id])
+
+  user_id     String
+  user        User     @relation(fields: [user_id], references: [id])
+
+  downloaded_at DateTime @default(now())
+}
