@@ -13,7 +13,9 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-
+  // At runtime use the pooled DATABASE_URL (pgbouncer). For migrations or
+  // introspection run with DIRECT_URL set to the direct database connection.
+  url = env("DATABASE_URL")
 }
 
 // =====================
@@ -38,6 +40,7 @@ enum CourseStatus {
 model User {
   id               String     @id @default(uuid())
   email            String     @unique
+  password         String
   name             String
   role             UserRole   @default(staff)
   bio              String?
