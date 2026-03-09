@@ -1,6 +1,12 @@
 # Backend — Prisma & Supabase workflow
 
+deployed on Render
+https://vault-backend-0pjh.onrender.com
 This document explains the recommended workflow for working with Prisma and Supabase in this project.
+
+POST /api/auth/register
+POST /api/auth/login
+GET /api/auth/me
 
 Key idea
 
