@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const authorize = require('./role.middleware')
+
 
 const authenticate = (req, res, next) => {
 
@@ -31,4 +31,4 @@ const authenticate = (req, res, next) => {
 }
 }
 
-module.exports = { authenticate,authorize }
+module.exports = { authenticate}
