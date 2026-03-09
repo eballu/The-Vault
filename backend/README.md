@@ -7,6 +7,12 @@ This document explains the recommended workflow for working with Prisma and Supa
 POST /api/auth/register
 POST /api/auth/login
 GET /api/auth/me
+GET /api/departments
+GET /api/categories
+POST /api/categories
+POST /api/courses → submit a course
+GET /api/courses → list approved courses
+GET /api/courses/:id → get course details
 
 Key idea
 
