@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 
+
+
 const {
   createCourse,
   getCourses,
@@ -8,8 +10,9 @@ const {
 } = require("../controllers/course.controller")
 
 const { authenticate } = require("../middleware/auth.middleware")
+const authorize = require("../middleware/role.middleware");
 
-router.post("/", authenticate, createCourse)
+router.post("/", authenticate,authorize("admin","staff"), createCourse)
 router.get("/", getCourses)
 router.get("/:id", getCourseById)
 

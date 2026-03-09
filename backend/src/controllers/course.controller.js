@@ -1,5 +1,6 @@
 const prisma = require("../utils/prisma")
 
+
 const createCourse = async (req, res) => {
   try {
 
