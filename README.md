@@ -1,11 +1,18 @@
 
+
+
+![newVault](https://github.com/user-attachments/assets/b79c0252-5239-4d5b-a483-f09c300787d8)
+
+
+
 https://the-vault-project.netlify.app/
 [dashboard.html](https://github.com/user-attachments/files/25884157/dashboard.html)
 [auth.js](https://github.com/user-attachments/files/25884154/auth.js)
 [styles.css](https://github.com/user-attachments/files/25884161/styles.css)
 [register.html](https://github.com/user-attachments/files/25884160/register.html)
 [login.html](https://github.com/user-attachments/files/25884159/login.html)
-[auth.js](https://github.com/user-attachments/files/25884158/auth.js)
+[auth.js](https://github.com/user-attac![Uploading newVault.png…]()
+hments/files/25884158/auth.js)
 
 
 
