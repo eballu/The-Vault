@@ -13,6 +13,12 @@ POST /api/categories
 POST /api/courses → submit a course
 GET /api/courses → list approved courses
 GET /api/courses/:id → get course details
+POST /api/courses -> submit course (staff/admin)
+GET /api/courses -> get approved courses
+GET /api/courses/pending -> admin sees pending courses
+PATCH /api/courses/:id/approve
+PATCH /api/courses/:id/reject
+GET /api/courses/:id
 
 Key idea
 
