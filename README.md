@@ -1,4 +1,12 @@
+
 https://the-vault-project.netlify.app/
+[dashboard.html](https://github.com/user-attachments/files/25884157/dashboard.html)
+[auth.js](https://github.com/user-attachments/files/25884154/auth.js)
+[styles.css](https://github.com/user-attachments/files/25884161/styles.css)
+[register.html](https://github.com/user-attachments/files/25884160/register.html)
+[login.html](https://github.com/user-attachments/files/25884159/login.html)
+[auth.js](https://github.com/user-attachments/files/25884158/auth.js)
+
 
 
 [admin-login.html](https://github.com/user-attachments/files/25542056/admin-login.html)# The-Vault [register.html](https://github.com/user-attachments/files/25475073/register.html)
