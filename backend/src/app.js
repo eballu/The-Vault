@@ -6,7 +6,8 @@ const dotenv =require("dotenv");
 const authRoutes = require("./routes/auth.routes.js");
 const departmentRoutes = require("./routes/department.routes");
 const categoryRoutes = require("./routes/category.routes.js");
-const courseRoutes = require("./routes/course.routes")
+const courseRoutes = require("./routes/course.routes");
+const fileRoutes = require("./routes/file.routes")
 
 
 
@@ -23,6 +24,7 @@ app.use("/api/auth", authRoutes)
 app.use("/api/departments", departmentRoutes)
 app.use("/api/categories",categoryRoutes)
 app.use("/api/courses", courseRoutes)
+app.use("/api", fileRoutes)
 
 app.get("/", (req,res)=>{
   res.send("Vault API Running")

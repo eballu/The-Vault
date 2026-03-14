@@ -19,6 +19,7 @@ const createCourse = async (req, res) => {
       data: {
         title,
         description,
+        status: "pending",
         category: {
           connect: {
             id: category_id
